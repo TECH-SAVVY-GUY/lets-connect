@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let's Connect</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <script type="module" src="../static/script.js"></script>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Let's Connect!</h1>
+    <div class="wrapper">
+        <textarea spellcheck="false" placeholder="Post something interesting..." required></textarea>
+        <button><i class="uil uil-message"></i></button>
+      </div>
+      <script>
+        const textarea = document.querySelector("textarea");
+        textarea.addEventListener("keyup", e =>{
+          textarea.style.height = "63px";
+          let scHeight = e.target.scrollHeight;
+          textarea.style.height = `${scHeight}px`;
+        });
+      </script>
+</body>
+</html>
+
+
