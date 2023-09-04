@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Let's Connect</title>
-    <link rel="stylesheet" href="../static/styles.css">
-    <script type="module" src="../static/script.js"></script>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Let's Connect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/marked@3.0.7/marked.min.js"></script>
+
+  <link rel="stylesheet" href="../static/styles.css">
+  <script type="module" src="../static/script.js"></script>
+
+
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"
+    integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+
 </head>
+
 <body>
-    <h1>Let's Connect!</h1>
-    <div class="wrapper">
-        <textarea spellcheck="false" placeholder="Post something interesting..." required></textarea>
-        <button><i class="uil uil-message"></i></button>
-      </div>
-      <script>
-        const textarea = document.querySelector("textarea");
-        textarea.addEventListener("keyup", e =>{
-          textarea.style.height = "63px";
-          let scHeight = e.target.scrollHeight;
-          textarea.style.height = `${scHeight}px`;
-        });
-      </script>
+  <h1>Let's Connect!</h1>
+  <div id="chat-room"></div>
+  <div class="wrapper">
+    <input type="hidden" id="port" value="{{ port }}">
+    <textarea spellcheck="false" placeholder="Post something interesting..." required id="message"></textarea>
+    <input type="file" id="file-upload">
+    <button id="send"><i class="uil uil-message"></i></button>
+  </div>
 </body>
+
+
+
+
 </html>
-
-
